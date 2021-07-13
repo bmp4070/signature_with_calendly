@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Signature" icon-name="standard:contact">
+            <lightning-button-icon
+                icon-name="utility:expand_alt"
+                slot="actions"
+            ></lightning-button-icon>
+            <div class="slds-var-m-around_medium">
+                <lightning-record-form
+                    object-api-name="Signature__c"
+                    record-id={signatureId}
+                    fields={signatureFields}
+                    columns="2"
+                ></lightning-record-form>
+            </div>
+            <!-- Calendly inline widget begin -->
+            <div class="calendly-inline-widget">
+                <p><lightning-formatted-url value="https://calendly.com/bhargava9/30min" tooltip="Use https://calendly.com/bhargava9" label="Calendly: Schedule a 30 minute meeting on my calendar"></lightning-formatted-url></p>
+            </div>
+            <!-- Calendly inline widget end -->
+    </lightning-card>
+</template>
