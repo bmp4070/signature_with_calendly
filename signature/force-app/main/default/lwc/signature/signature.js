@@ -8,8 +8,8 @@ import PHONE_FIELD from '@salesforce/schema/Signature__c.Phone__c';
 import MOBILE_PHONE_FIELD from '@salesforce/schema/Signature__c.Mobile_Phone__c';
 import EMAIL_FIELD from '@salesforce/schema/Signature__c.Email__c';
 
-import calendly from '@salesforce/resourceUrl/calendly';
-import { loadStyle, loadScript } from 'lightning/platformResourceLoader';
+//import calendly from '@salesforce/resourceUrl/calendly';
+//import { loadStyle, loadScript } from 'lightning/platformResourceLoader';
 
 // const PROPERTY_FIELDS = [SIGNATURE_FIELD];
 const SIGNATURE_FIELDS = [
@@ -24,11 +24,11 @@ export default class Signature extends NavigationMixin(LightningElement) {
 
     signatureFields = SIGNATURE_FIELDS;
 
-    // @wire(getRecord, { recordId: '$recordId', fields: PROPERTY_FIELDS })
-    // property;
+    @wire(getRecord, { recordId: '$recordId', fields: SIGNATURE_FIELD })
+    property;
 
     get signatureId() {
-        return getFieldValue(this.recordId, SIGNATURE_FIELD);
+        return getFieldValue(this.property.data, SIGNATURE_FIELD);
     }
 
     //loadScript(this, calendly + '/widget.js').then(() => {
